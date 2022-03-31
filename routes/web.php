@@ -17,3 +17,6 @@ Route::get('/', [App\Http\Controllers\ProjectController::class, 'index'])->name(
 Route::get('/insertNewProject', [App\Http\Controllers\ProjectController::class, 'insertNewProject']);
 Route::get('/updateProject', [App\Http\Controllers\ProjectController::class, 'updateProject']);
 Route::get('/activeProjects', [App\Http\Controllers\ProjectController::class, 'activeProjects']);
+Route::get('/physicalDelete/{id}', [App\Http\Controllers\ProjectController::class, 'physicalDelete']);
+Route::get('/logicalDelete/{id}', [App\Http\Controllers\ProjectController::class, 'logicalDelete']);
+Route::get('/deleteInactiveProjects', [App\Http\Controllers\ProjectController::class, 'deleteInactiveProjects']);

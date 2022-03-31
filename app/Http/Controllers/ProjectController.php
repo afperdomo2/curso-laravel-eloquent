@@ -51,4 +51,25 @@ class ProjectController extends Controller
 
         return dd('actualizado por lotes');
     }
+
+    public function physicalDelete(int $id)
+    {
+        $project = Project::findOrFail($id);
+        $project->delete();
+        return dd('borrado físico');
+    }
+
+    public function logicalDelete(int $id)
+    {
+        $project = Project::findOrFail($id);
+        $project->is_active = 0;
+        $project->save();
+        return dd('borrado lógico');
+    }
+
+    public function deleteInactiveProjects()
+    {
+        Project::where('is_active', 0)->delete();
+        return dd('borrado los proyectos inactivos');
+    }
 }
