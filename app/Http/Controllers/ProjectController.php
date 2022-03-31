@@ -42,4 +42,13 @@ class ProjectController extends Controller
 
         return dd('actualizado');
     }
+
+    // Actualizar proyectos por lotes
+    public function activeProjects()
+    {
+        Project::where('is_active', 0)
+            ->update(['name' => 'Proyecto activado', 'city_id' => 4, 'is_active' => 1]);
+
+        return dd('actualizado por lotes');
+    }
 }
