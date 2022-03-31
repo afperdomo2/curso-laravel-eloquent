@@ -19,4 +19,18 @@ class ProjectController extends Controller
                 ->take(10)
                 ->get();
     }
+
+    public function insertNewProject()
+    {
+        $project = new Project;
+        $project->city_id = 1;
+        $project->company_id = 1;
+        $project->user_id = 1;
+        $project->name = 'Nombre del proyecto';
+        $project->execution_date = '2020-04-30';
+        $project->is_active = 1;
+        $project->save();
+
+        return dd('guardado');
+    }
 }
