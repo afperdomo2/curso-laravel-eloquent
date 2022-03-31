@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\ProjectController::class, 'index'])->name('home');
 Route::get('/insertNewProject', [App\Http\Controllers\ProjectController::class, 'insertNewProject']);
+Route::get('/updateProject', [App\Http\Controllers\ProjectController::class, 'updateProject']);

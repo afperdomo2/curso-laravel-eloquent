@@ -33,4 +33,13 @@ class ProjectController extends Controller
 
         return dd('guardado');
     }
+
+    public function updateProject()
+    {
+        $project = Project::findOrFail(2);
+        $project->name = 'Proyecto de tecnología 333';
+        $project->save();
+
+        return dd('actualizado');
+    }
 }
