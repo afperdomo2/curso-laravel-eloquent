@@ -14,10 +14,13 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return Project::where('is_active', 1)
+        //$projects = Project::first();
+        $projects = Project::where('is_active', 1)
                 ->orderBy('name', 'asc')
-                ->get()
-                ->chunk(5);
+                ->get();
+        return view('index', [
+            'projects' => $projects
+        ]);
     }
 
     public function insertNewProject()
