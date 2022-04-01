@@ -16,8 +16,8 @@ class ProjectController extends Controller
     {
         return Project::where('is_active', 1)
                 ->orderBy('name', 'asc')
-                ->take(10)
-                ->get();
+                ->get()
+                ->chunk(5);
     }
 
     public function insertNewProject()
