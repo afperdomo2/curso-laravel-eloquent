@@ -13,7 +13,8 @@ class Company extends Model
     protected $primaryKey = 'company_id';
     public $timestamps = false;
 
-    public function companies() {
+    public function companies()
+    {
         return $this->hasMany(Project::class, 'company_id', 'company_id');
     }
 }

@@ -13,7 +13,8 @@ class City extends Model
     protected $primaryKey = 'city_id';
     public $timestamps = false;
 
-    public function cities() {
+    public function cities()
+    {
         return $this->hasMany(Project::class, 'city_id', 'city_id');
     }
 }

@@ -17,15 +17,18 @@ class Project extends Model
     //protected $keyType = 'string'; // Si la Pkey es de tipo diferente a integer
     //public $incrementing = false; // Si se quiere desactivar el autoincremento de la Pkey
 
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function company() {
+    public function company()
+    {
         return $this->belongsTo(Company::class, 'company_id');
     }
 
-    public function city() {
+    public function city()
+    {
         return $this->belongsTo(City::class, 'city_id');
     }
 

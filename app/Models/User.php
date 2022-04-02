@@ -16,7 +16,8 @@ class User extends Authenticatable
     protected $primaryKey = 'user_id';
     public $timestamps = false;
 
-    public function projects() {
+    public function projects()
+    {
         return $this->hasMany(Project::class, 'user_id', 'user_id');
     }
 }
