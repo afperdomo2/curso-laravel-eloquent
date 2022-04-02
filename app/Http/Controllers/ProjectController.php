@@ -15,9 +15,8 @@ class ProjectController extends Controller
     public function index()
     {
         //$projects = Project::first();
-        $projects = Project::where('is_active', 1)
-                ->orderBy('name', 'asc')
-                ->get();
+        $projects = Project::orderBy('name', 'asc')->get();
+
         return view('index', [
             'projects' => $projects
         ]);
