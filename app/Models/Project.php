@@ -29,7 +29,18 @@ class Project extends Model
         return $this->belongsTo(City::class, 'city_id');
     }
 
-     /**
+    /**
+     * Filtra los proyectos sin modificar
+     *
+     * @param  object $query
+     * @return object
+     */
+    public function scopeUnmodified($query)
+    {
+        return $query->where('updated_at', null);
+    }
+
+    /**
      * The "booted" method of the model.
      *
      * @return void
